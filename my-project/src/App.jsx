@@ -5,6 +5,9 @@ import EmpCard from "./components/empcard";
 function App() {
   const [employees, setEmployees] = useState([]);
     const [search, setSearch] = useState("");
+    const printAll = () => {
+  window.print();
+};
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -19,6 +22,7 @@ function App() {
 
   return (
 <>
+  
     <input
   type="text"
   placeholder="Search by name or email..."
@@ -31,6 +35,7 @@ function App() {
         <EmpCard key={employee.id} employee={employee} />
       ))}
     </div>
+    <button onClick={printAll}>Print All Cards</button>
     </>
   );
 }
