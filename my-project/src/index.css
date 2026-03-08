@@ -1,5 +1,3 @@
-
-
 :root {
  body {
   font-family: Arial, sans-serif;
@@ -32,5 +30,26 @@ h1 {
 
 .card p {
   margin: 5px 0;
+}
+@media print {
+  body {
+    background: white;
+    margin: 0;
+  }
+
+  .card {
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+    margin: 10px 0;
+  }
+
+  button, input {
+    display: none; 
+  }
+
+  .container {
+    display: block; 
+  }
 }
 }
